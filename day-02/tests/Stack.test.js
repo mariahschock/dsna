@@ -14,4 +14,9 @@ describe('Stack', () => {
     stack.pop();
     expect(stack.readableArr).toEqual(['fox', 'goose']);
   });
+
+  it('peek should return the last item in the array', () => {
+    const peekItem = new Stack(['fox', 'goose', 'lizard']);
+    expect(peekItem.peek()).toEqual('lizard');
+  });
 });
