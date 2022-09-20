@@ -14,14 +14,18 @@ function titleCase(str) {
 }
 
 function oddishOrEvenish(num) {
-  const myNumber = num
+  return num
     .toString()
     .split('')
     .map((number) => parseInt(number))
     .reduce((acc, curr) => {
       return acc + curr;
-    }, 0);
-  return myNumber % 2 === 0 ? 'Evenish' : 'Oddish';
+    }, 0)
+  % 2 === 0 ? 'Evenish' : 'Oddish';
 }
 
-module.exports = { reverseSentence, titleCase, oddishOrEvenish };
+function at(arr, index) {
+  return index >= 0 ? arr[index] : arr[arr.length + index];
+}
+
+module.exports = { reverseSentence, titleCase, oddishOrEvenish, at };
