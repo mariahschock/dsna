@@ -59,4 +59,12 @@ function addPunctuation(str) {
   };
 }
 
-module.exports = { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz, multiplesOfN, addPunctuation };
+function addFirst(str) {
+  const newArr = [];
+  return function addToArr(arr) {
+    newArr.push(str, ...arr);
+    return newArr;
+  };
+}
+
+module.exports = { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz, multiplesOfN, addPunctuation, addFirst };
