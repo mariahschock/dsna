@@ -1,4 +1,4 @@
-const { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz, multiplesOfN, addPunctuation, addFirst } = require('./index');
+const { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz, multiplesOfN, addPunctuation, addFirst, rootDigit } = require('./index');
 
 describe('primitive code challenges', () => {
   describe('reverseSentence', () => {
@@ -70,6 +70,16 @@ describe('HOFO', () => {
   describe('addFirst', () => {
     it('adds new first element to array', () => {
       expect(addFirst('orange')(['red', 'blue', 'green'])).toEqual(['orange', 'red', 'blue', 'green']);
+    });
+  });
+});
+
+describe('Recursion', () => {
+  describe('rootDigit', () => {
+    it('adds the value of all numbers, if double digits adds them together as if they were single', () => {
+      expect(rootDigit(123)).toEqual(6);
+      expect(rootDigit(4322)).toEqual(2);
+      expect(rootDigit(999888777)).toEqual(9);
     });
   });
 });
