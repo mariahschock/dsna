@@ -34,4 +34,13 @@ function anagrams(wordOne, wordTwo) {
   return arrOne === arrTwo ? true : false;
 }
 
-module.exports = { reverseSentence, titleCase, oddishOrEvenish, at, anagrams };
+function fizzBuzz(number) {
+  return number > 0 ? Array.from({ length: number }, (v, i) => i + 1).map((num) => {
+    if (num % 3 === 0 && num % 5 === 0) return 'FizzBuzz';
+    if (num % 3 === 0) return 'Fizz';
+    if (num % 5 === 0) return 'Buzz';
+    return num;
+  }) : [];
+}
+
+module.exports = { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz };
