@@ -79,9 +79,15 @@ function rootDigit(num) {
 }
 
 function repeat(txt, n) {
-  if (n === 1) {
-    return txt;
-  } else return txt + repeat(txt, n - 1);
+  return n === 1 ? txt : txt + repeat(txt, n - 1);
 }
 
-module.exports = { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz, multiplesOfN, addPunctuation, addFirst, rootDigit, repeat };
+function fib(n) {
+  if(n === 1 || n === 0) {
+    return n;
+  } else {
+    return fib(n - 2) + fib(n - 1);
+  }
+}
+
+module.exports = { reverseSentence, titleCase, oddishOrEvenish, at, anagrams, fizzBuzz, multiplesOfN, addPunctuation, addFirst, rootDigit, repeat, fib };
