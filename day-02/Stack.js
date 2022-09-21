@@ -19,6 +19,29 @@ class Stack {
   get readableArr() {
     return this.#list;
   }
+
+  checkSyntax(code) {
+    const check = new Stack();
+    const opening = [];
+    const closing = [];
+    String(code).split('').map(char => {
+      if (char === '(' || char === ')' || char === '{' || char === '}') {
+        check.push(char);
+      }
+    });
+    const length = check.#list.length;
+
+    for (let i = 0; i < length; i++) {
+      if (check.peek() === '(' || check.peek() === '{') {
+        opening.push(1);
+        check.pop();
+      } else if (check.peek() === ')' || check.peek() === '}') {
+        closing.push(1);
+        check.pop();
+      }
+    }
+    return String(opening) === String(closing) ? true : false;
+  }
 }
 
 module.exports = { Stack };

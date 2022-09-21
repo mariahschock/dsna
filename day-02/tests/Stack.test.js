@@ -22,4 +22,9 @@ describe('Stack', () => {
     expect(peekItem.peek()).toEqual('lizard');
   });
 
+  it('checking syntax', () => {
+    const stack = new Stack();
+    expect(stack.checkSyntax('((2 + 3) * (4 + 11 * (2 - 1)))')).toEqual(true);
+  });
+
 });
