@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const { Stack } = require('../Stack.js');
 
 describe('Stack', () => {   
@@ -19,4 +21,5 @@ describe('Stack', () => {
     const peekItem = new Stack(['fox', 'goose', 'lizard']);
     expect(peekItem.peek()).toEqual('lizard');
   });
+
 });

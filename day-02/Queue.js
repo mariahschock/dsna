@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 class Queue {
   #list;
 
