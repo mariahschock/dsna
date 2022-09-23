@@ -1,4 +1,4 @@
-const { BinaryTreeNode } = require('./index');
+const { BinaryTreeNode, PersonTreeNode } = require('./index');
 
 describe('node based data structures', () => {
   it('example test', () => {
@@ -17,5 +17,31 @@ describe('node based data structures', () => {
     expect(B.left.value).toEqual('A');
     expect(B.right.value).toEqual('D');
     expect(B.left.right.value).toEqual('C');
+  });
+
+  it('creates a person tree', () => {
+    const Jenna = new PersonTreeNode({
+      name: 'Jenna',
+      city: 'Tigard'
+    });
+    const Austin = new PersonTreeNode({
+      name: 'Austin',
+      city: 'Portland'
+    });
+    const Colter = new PersonTreeNode({
+      name: 'Colter',
+      city: 'Corvallis'
+    });
+    const Sebastian = new PersonTreeNode({
+      name: 'Sebastian',
+      city: 'Portland'
+    });
+    Jenna.add(Austin);
+    Jenna.add(Colter);
+    Jenna.add(Sebastian);
+    expect(Jenna.value).toEqual('Jenna', 'Tigard');
+    expect(Jenna.left.value).toEqual('Austin', 'Portland');
+    expect(Jenna.left.right.value).toEqual('Colter', 'Corvallis');
+    expect(Jenna.right.value).toEqual('Sebastian', 'Portland');
   });
 });
