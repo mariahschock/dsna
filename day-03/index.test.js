@@ -43,5 +43,18 @@ describe('node based data structures', () => {
     expect(Jenna.left.value).toEqual('Austin', 'Portland');
     expect(Jenna.left.right.value).toEqual('Colter', 'Corvallis');
     expect(Jenna.right.value).toEqual('Sebastian', 'Portland');
+    expect(Jenna.findPerson('Austin')).toEqual({
+      name: 'Austin',
+      city: 'Portland'
+    });
+    expect(Jenna.findPerson('Jason')).toEqual(null);
+    expect(Jenna.findPerson('Sebastian')).toEqual({
+      name: 'Sebastian',
+      city: 'Portland'
+    });
+    expect(Jenna.findPerson('Colter')).toEqual({
+      name: 'Colter',
+      city: 'Corvallis'
+    });
   });
 });
