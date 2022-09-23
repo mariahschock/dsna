@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const { MyDataStructure } = require('../MyDataStructure.js');
 
 describe('MyDataStructure', () => {
